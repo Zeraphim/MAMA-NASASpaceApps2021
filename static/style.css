@@ -20,7 +20,7 @@ display: flex;
 }
 
 .navbar-container{
-width: 10%;
+width: 7%;
 height: 100vh;
 background-color:#05445E;
 color:#D4F1F4;
@@ -61,12 +61,12 @@ padding-top: 2em;
 nav ul li a{
 color: #D4F1F4;
 font-size: 1.5em;
-padding-right: 1em;
+/* padding-right: 1em; */
 }
 
 
 .map-container{
-width: 90%;
+width: 93%;
 height: 100vh;
 }
 
