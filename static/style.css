@@ -82,8 +82,8 @@ TOOL TIP
     right: 0;
     box-shadow: 0px 0px 10px 3px #000;
     width: 20%;
-    height: 100vh;
-
+    height: 40vh;
+    z-index: 1;
 }
 .stats-tool-tip-container a{
     color: #D4F1F4;
@@ -97,6 +97,7 @@ OTHERS TOOL TIP
 */
 
 .others-tool-tip-container{
+    position: relative;
     position: fixed;
     background-color: #189AB4;
     right: 0em;
@@ -121,3 +122,13 @@ OTHERS TOOL TIP
 /*
 END of TOOL TIP
 */
+
+/*
+CLOSE TOOL TIP
+*/
+
+.closeToolTip{
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+}
