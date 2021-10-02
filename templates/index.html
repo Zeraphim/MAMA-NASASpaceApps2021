@@ -31,6 +31,10 @@ color:#D4F1F4;
 display: flex;
 flex-direction: column;
 text-align: center;
+box-shadow: 0px 0px 10px 10px #000;
+z-index: 1;
+position: relative;
+transition: 0.5s ease;
 }
 .logo-container{
 width: 100%;
@@ -42,7 +46,11 @@ padding-top: 1em;
 nav{
 
 }
-
+#navbarCloseButton{
+   position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
 nav ul{
 display: flex;
 flex-direction: column;
@@ -74,6 +82,7 @@ TOOL TIP
     background-color: #05445E;
     right: 1em;
     top:1em;
+    box-shadow: 0px 0px 10px 3px #000;
 
 }
 .stats-tool-tip-container a{
@@ -92,7 +101,7 @@ OTHERS TOOL TIP
     background-color: #189AB4;
     right: 1em;
     top:1em;
-
+    box-shadow: 0px 0px 10px 3px #000;
 }
 .others-tool-tip-container a{
     color: #D4F1F4;
@@ -152,16 +161,20 @@ END of TOOL TIP
                     <ul>
                         <li><a><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                             <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
-                          </svg> Home </a></li>
+                          </svg></a></li>
                         <li><a id="statsButton"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-bar-chart-line-fill" viewBox="0 0 16 16">
                             <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2z"/>
-                          </svg>  Statistics  </a></li>
+                          </svg></a></li>
                         <li><a id="othersButton"><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-bar-chart-steps" viewBox="0 0 16 16">
                             <path d="M.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 .5 0zM2 1.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1z"/>
-                          </svg> Others </a></li>
+                          </svg> </a></li>
                         
                     </ul>
                 </nav>
+                <a id="nbCloseBtn"><svg id="navbarCloseButton" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                    <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                  </svg></a>
         </div>
 
         <div class="map-container">
@@ -183,7 +196,10 @@ const statsToolTip = document.querySelector('#statsToolTip')
 const othersButton = document.querySelector("#othersButton")
 const  othersToolTip= document.querySelector('#othersToolTip')
 
-
+//navbarshrinkbutton
+const nbCloseButton = document.querySelector('#nbCloseBtn');
+const navbarContainer = document.querySelector('.navbar-container');
+const mapContainer = document.querySelector('.map-container');
 
 //ONCLICK FUNCTIONS
 
@@ -213,6 +229,23 @@ othersToolTip.addEventListener('click',function(e){
 e.preventDefault();
 othersToolTip.classList.add('hidden');
 })
+
+nbCloseButton.addEventListener('click',function(e){
+    e.preventDefault();
+    navbarContainer.style.width = "10%";
+    mapContainer.style.width = "90%";
+    nbCloseButton.classList.add('hidden');
+})
+
+navbarContainer.addEventListener('mouseover',function(e){
+    e.preventDefault();
+    navbarContainer.style.width = "25%";
+    mapContainer.style.width = "75%";
+    nbCloseButton.classList.remove('hidden');
+    
+})
+
+
 </script>
 </body>
 </html>
