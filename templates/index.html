@@ -1,133 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<style>
-    *{
-    padding:0;
-    margin:0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-body{
-    width: 100%;
-    height: 100vh;
-}
-.container{
-    background-color: #D4F1F4;
-    width: 100%;
-}
-
-.flex-box{
-display: flex;
-
-}
-
-.navbar-container{
-width: 25%;
-height: 100vh;
-background-color:#05445E;
-color:#D4F1F4;
-display: flex;
-flex-direction: column;
-text-align: center;
-box-shadow: 0px 0px 10px 10px #000;
-z-index: 1;
-position: relative;
-transition: 0.5s ease;
-}
-.logo-container{
-width: 100%;
-padding-top: 1em;
-}
-.logo-container img{
-    width: 30%;
-}
-nav{
-
-}
-#navbarCloseButton{
-   position: absolute;
-    bottom: 1em;
-    right: 1em;
-}
-nav ul{
-display: flex;
-flex-direction: column;
-}
-
-nav ul li{
-list-style: none;
-padding-top: 2em;
-}
-
-nav ul li a{
-color: #D4F1F4;
-font-size: 1.5em;
-}
-
-.map-container{
-width: 75%;
-height: 100vh;
-}
-
-/*
-TOOL TIP
-*/
-.hidden{
-    visibility: hidden;
-}
-.stats-tool-tip-container{
-    position: fixed;
-    background-color: #05445E;
-    right: 1em;
-    top:1em;
-    box-shadow: 0px 0px 10px 3px #000;
-
-}
-.stats-tool-tip-container a{
-    color: #D4F1F4;
-    text-decoration: none;
-    padding-bottom: 1em;
-    
-}
-
-/*
-OTHERS TOOL TIP
-*/
-
-.others-tool-tip-container{
-    position: fixed;
-    background-color: #189AB4;
-    right: 1em;
-    top:1em;
-    box-shadow: 0px 0px 10px 3px #000;
-}
-.others-tool-tip-container a{
-    color: #D4F1F4;
-    text-decoration: none;
-    padding-bottom: 1em;
-    
-}
-
-.tool-tip-container-flexbox{
-    display: flex;
-    flex-direction: column;
-    padding:3em;
-}
-
-/*
-END of TOOL TIP
-*/
-
-</style>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>HelloWorld</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 <body>
@@ -153,8 +32,8 @@ END of TOOL TIP
 <div class="container">
     <div class="flex-box">
         <div class="navbar-container">
-                <div class="logo-container">
-                        <img src="images/logo.png">
+                <div class="logo-container"> 
+                        <img src="{{ url_for('static', filename='logo.png') }}">
                 </div>
 
                 <nav>
@@ -185,67 +64,7 @@ END of TOOL TIP
 
 </div>
 
-<script>
-// SELECTING ELEMENTS 
+<script src="{{ url_for('static', filename='script.js') }}"> </script>
 
-//STATS TOOL TIP
-const statsButton = document.querySelector("#statsButton")
-const statsToolTip = document.querySelector('#statsToolTip')
-
-//OTHERS TOOL TIP
-const othersButton = document.querySelector("#othersButton")
-const  othersToolTip= document.querySelector('#othersToolTip')
-
-//navbarshrinkbutton
-const nbCloseButton = document.querySelector('#nbCloseBtn');
-const navbarContainer = document.querySelector('.navbar-container');
-const mapContainer = document.querySelector('.map-container');
-
-//ONCLICK FUNCTIONS
-
-//OPEN STATS TOOLTIP
-statsButton.addEventListener('click',function(e){
-e.preventDefault();
-statsToolTip.classList.remove('hidden');
-
-})
-
-//CLOSE STATS TOOLTIP
-statsToolTip.addEventListener('click',function(e){
-e.preventDefault();
-statsToolTip.classList.add('hidden');
-})
-
-
-//OPEN STATS TOOLTIP
-othersButton.addEventListener('click',function(e){
-e.preventDefault();
-othersToolTip.classList.remove('hidden');
-
-})
-
-//CLOSE STATS TOOLTIP
-othersToolTip.addEventListener('click',function(e){
-e.preventDefault();
-othersToolTip.classList.add('hidden');
-})
-
-nbCloseButton.addEventListener('click',function(e){
-    e.preventDefault();
-    navbarContainer.style.width = "10%";
-    mapContainer.style.width = "90%";
-    nbCloseButton.classList.add('hidden');
-})
-
-navbarContainer.addEventListener('mouseover',function(e){
-    e.preventDefault();
-    navbarContainer.style.width = "25%";
-    mapContainer.style.width = "75%";
-    nbCloseButton.classList.remove('hidden');
-    
-})
-
-
-</script>
 </body>
 </html>
