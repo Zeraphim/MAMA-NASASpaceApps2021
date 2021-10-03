@@ -67,12 +67,17 @@ nav ul li{
     padding-top: 2em;
     display: flex;
 margin: 0 auto;
+padding-left: 0em;
+
 
 }
+
 nav ul li:hover{
    background-color: #01141b;
-   transition:0.6 ease-in-out;
-   padding-left:0em;
+   padding-left: 2em;
+   transition:1 ease;
+
+   
 }
 
 
