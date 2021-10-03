@@ -27,8 +27,9 @@ Tested on Windows 10
     https://www.python.org/downloads/
   ```
 ### 2. Install PIP
+```
   https://pip.pypa.io/en/stable/installing/
-
+```
 ### 3. Install virtualenv:
    ```
    pip install virtualenv
