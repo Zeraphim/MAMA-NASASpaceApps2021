@@ -76,9 +76,9 @@ navbarContainer.addEventListener('mouseover',function(e){
 })
 
 // Make the DIV element draggable:
-dragElement(document.getElementById("statsToolTip"));
+dragElement1(document.getElementById("statsToolTip"));
 
-function dragElement(elmnt) {
+function dragElement1(elmnt) {
     
 
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -191,61 +191,7 @@ function dragElement(elmnt) {
   }
 }
 
-function get_events(lat, lng) {
-  fetch("api/retrieve/events/?lat=" + lat + "&lng=" + lng)
-    .then((response) => response.json())
-    .then((json) => display_card(json));
-}
 
-function display_card(city_name) {
-  fetch("api/retrieve/events/city/?city_name=" + city_name)
-    .then((response) => response.json())
-    .then((events) => display_events(city_name, events));
-}
-
-function display_events(city_name, events) {
-  var event_entries = "";
-  var i;
-  for (i = 0; i < events.length; i++) {
-    if (events[i][4] === "General Warning") {
-      event_entries += `<div class="card mt-3 bg-warning text-light" style="width: 18rem;">`;
-    } else if (events[i][4] === "Risk Mitigation/Preparation") {
-      event_entries += `<div class="card mt-3 bg-success text-light" style="width: 18rem;">`;
-    } else if (events[i][4] === "Disaster") {
-      event_entries += `<div class="card mt-3 bg-danger text-light" style="width: 18rem;">`;
-    } else if (events[i][4] === "Response") {
-      event_entries += `<div class="card mt-3 bg-info text-light" style="width: 18rem;">`;
-    }
-
-    event_entries += `
-  <div class="card-body" style="text-align: left;">
-    <h5 class="card-title font-weight-bold">${events[i][2]}</h5>
-    <h6 class="card-subtitle mb-2 font-weight-light">${events[i][4]}</h6>
-    <p class="card-text font-weight-normal">${events[i][3]}</p>
-    <h6 class="text-light mb-2 font-italic">${events[i][5]}</h6>
-  </div></div>`;
-    console.log("looped");
-  }
-  let marker_card = document.querySelector(".content");
-
-  if (events.length === 0) {
-    marker_card.innerHTML =
-      "" +
-      "<div style='background-color: white;padding: 20px; max-width: 400px; max-height: 400px'><p>Events in " +
-      city_name +
-      "<br></p><a class='text-muted'>No entry exists for this city.</a></div>";
-    marker_card.style.visibility = "true";
-  } else {
-    marker_card.innerHTML =
-      "" +
-      "<div style='background-color: white;padding: 20px; max-width: 400px; max-height: 400px'><p>Events in " +
-      city_name +
-      "<br></p>" +
-      event_entries +
-      "</div>";
-    marker_card.style.visibility = "true";
-  }
-}
 
 function tutorial(page = 0) {
   let inspector = document.querySelector(".content");
