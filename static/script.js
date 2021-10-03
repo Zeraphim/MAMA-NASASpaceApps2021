@@ -56,7 +56,7 @@ nbCloseButton.addEventListener('click',function(e){
     e.preventDefault();
     navbarContainer.style.width = "7%";
     mapContainer.style.width = "93%";
-    navUL.style.paddingLeft = '3em';
+    navUL.style.paddingLeft = '2em';
     nbCloseButton.classList.add('hidden');
     for(let i = 0; i <= navBarText.length;i++){
       navBarText[i].classList.add('hidden');
