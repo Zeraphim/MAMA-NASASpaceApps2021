@@ -17,6 +17,7 @@ MAMA (Monitoring and Assessing Marine Debris Application) uses Mapbox API to dis
 <li>Google Maps</li>
 <li>jQuery</li>
 <li>Bootstrap</li>
+<li>Heroku</li>
 </ul>
 
 ## Getting Started
