@@ -23,13 +23,12 @@ MAMA (Monitoring and Assessing Marine Debris Application) uses Mapbox API to dis
 Tested on Windows 10
 
 ### 1. Install Python 3.9.5 or higher versions
-  ```
     https://www.python.org/downloads/
-  ```
+    
 ### 2. Install PIP
-```
+
   https://pip.pypa.io/en/stable/installing/
-```
+
 ### 3. Install virtualenv:
    ```
    pip install virtualenv
@@ -39,9 +38,8 @@ Tested on Windows 10
    pip install flask
    ```
 ### 5. Clone or Download the Zip from the repo
-  ```
+
   https://github.com/Zeraphim/MAMA-NASASpaceApps2021
-  ```
    
 ### 6. Open cmd in project directory and run this command:
 ```
@@ -54,9 +52,8 @@ localhost:5000
 ```
 
 ### 8. Or simply open this link (hosted using heroku)
-```
+
 https://mama-nasa-space-apps.herokuapp.com/
-```
 
 ## 🌊 "A Healthy Sea is Marine Debris Free" 🌊
 By undergraduates from Mapua University, namely:
