@@ -56,7 +56,7 @@ localhost:5000
 https://mama-nasa-space-apps.herokuapp.com/
 
 ## 🌊 "A Healthy Sea is Marine Debris Free" 🌊
-By undergraduates from Mapua University, namely:
+By undergraduates from Mapúa University, namely:
 <li>Rudnick James Donaire (BS Computer Science - 4th Year)</li>
 <li>Cyril Jay L. Chan (BS Computer Engineering - 4th Year)</li>
 <li>John Christian S. Diamante (BS Computer Science - 2nd Year)</li>
