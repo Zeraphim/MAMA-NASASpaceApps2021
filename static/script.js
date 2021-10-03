@@ -51,15 +51,15 @@ othersToolTip.classList.add('hidden');
 
 nbCloseButton.addEventListener('click',function(e){
     e.preventDefault();
-    navbarContainer.style.width = "10%";
-    mapContainer.style.width = "90%";
+    navbarContainer.style.width = "7%";
+    mapContainer.style.width = "93%";
     nbCloseButton.classList.add('hidden');
 })
 
 navbarContainer.addEventListener('mouseover',function(e){
     e.preventDefault();
-    navbarContainer.style.width = "25%";
-    mapContainer.style.width = "75%";
+    navbarContainer.style.width = "18%";
+    mapContainer.style.width = "82%";
     nbCloseButton.classList.remove('hidden');
     
 })
