@@ -2,7 +2,7 @@
 
 ## 💡 What we're about 💡
 
-MAMA (Monitoring and Assessing Marine Debris Application) uses Mapbox API to display heatmaps in ocean bodies with high concentration of marine debris. The data is extracted from sattelite images which is then used by the application to provide heatmaps in their corresponding coordinates in the water bodies.
+MAMA (Monitoring and Assessing Marine Debris Application) uses Mapbox API to display heatmaps in ocean bodies with high concentration of marine debris. The data is extracted from satellite images which is then used by the application to provide heatmaps in their corresponding coordinates in bodies of water.
 
 ## 🛠 Technologies and materials used 🛠
 <ul>
@@ -14,7 +14,7 @@ MAMA (Monitoring and Assessing Marine Debris Application) uses Mapbox API to dis
 <li>Google Font API</li>
 <li>FontAwesome</li>
 <li>jsDelivr</li>
-<li>Google Mapse</li>
+<li>Google Maps</li>
 <li>jQuery</li>
 <li>Bootstrap</li>
 </ul>
