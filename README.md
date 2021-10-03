@@ -52,9 +52,9 @@ https://mama-nasa-space-apps.herokuapp.com/
 
 ## 🌊 "A Healthy Sea is Marine Debris Free" 🌊
 By undergraduates taking Computer Science from Mapua University, namely:
-<li>Rudnick James Donaire</li>
-<li>Cyril Jay L. Chan</li>
+<li>Rudnick James Donaire (BS Computer Science - 4th Year)</li>
+<li>Cyril Jay L. Chan (BS Computer Engineering - 4th Year)</li>
 <li>John Christian S. Diamante (BS Computer Science - 2nd Year)</li>
-<li>Joshua C. Gonzales</li>
+<li>Joshua C. Gonzales (BS Computer Engineering - 4th Year)</li>
 <li>Yeshua Miguel Abrenica (BS Information Technology - 1st Year)</li>
-<li>Joshua Ron G. Garcia</li>
+<li>Joshua Ron G. Garcia (BS Computer Engineering - 4th Year)</li>
