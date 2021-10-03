@@ -51,6 +51,7 @@ nav ul{
 display: flex;
 flex-direction: column;
 align-items: flex-start;
+padding-left: 2em;
 }
 
 nav ul li{
@@ -132,4 +133,16 @@ CLOSE TOOL TIP
     position: absolute;
     right: 0.5rem;
     top: 0.5rem;
+}
+
+.ttc-button-holder{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ttc-button-holder a{
+    padding: 8px;
+    background-color: #05445E;
+    color: #189AB4;
+    border-radius: 5px;
 }
