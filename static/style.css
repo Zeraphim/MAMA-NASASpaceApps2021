@@ -31,6 +31,7 @@ box-shadow: 0px 0px 1px 3px #000;
 z-index: 1;
 position: relative;
 transition: 0.5s ease;
+
 }
 .logo-container{
 width: 100%;
@@ -40,6 +41,8 @@ padding-top: 1em;
     width: 7em;
 }
 nav{
+width: 100%;
+display: flex;
 
 }
 #navbarCloseButton{
@@ -52,25 +55,25 @@ width: 100%;
 display: flex;
 flex-direction: column;
 cursor: pointer;
-padding-left: 3em;
+margin: 0 auto; 
+padding-left:3em;
+
+
 }
 
 nav ul li{
     width: 100%;
-list-style: none;
-padding-top: 2em;
-display: flex;
-justify-content:flex-start;
+    list-style: none;
+    padding-top: 2em;
+    display: flex;
+margin: 0 auto;
 
 }
-
 nav ul li:hover{
    background-color: #01141b;
    transition:0.6 ease-in-out;
    padding-left:0em;
 }
-
-
 
 
 span {
@@ -103,7 +106,7 @@ TOOL TIP
     position: fixed;
     background-color:#189AB4;
     right: 0;
-    box-shadow: 0px 0px 10px 3px #000;
+    box-shadow: 0px 0px 20px 3px #000;
     width: 20%;
     height: 40vh;
     z-index: 1;

@@ -69,6 +69,7 @@ navbarContainer.addEventListener('mouseover',function(e){
     mapContainer.style.width = "82%";
     nbCloseButton.classList.remove('hidden');
     navUL.style.paddingLeft = '0';
+
     for(let i = 0; i <= navBarText.length;i++){
       navBarText[i].classList.remove('hidden');
      }
