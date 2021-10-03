@@ -29,6 +29,7 @@ const navUL = document.querySelector('.navUL');
 statsButton.addEventListener('click',function(e){
 e.preventDefault();
 statsToolTip.classList.remove('hidden');
+
 })
 
 //CLOSE STATS TOOLTIP
@@ -38,18 +39,14 @@ closeBtn.addEventListener('click',function(e){
 statsToolTip.classList.add('hidden');
 })
 */
-
 //OPEN STATS TOOLTIP
 othersButton.addEventListener('click',function(e){
-  e.preventDefault();
-  othersToolTip.classList.remove('hidden');
+e.preventDefault();
+othersToolTip.classList.remove('hidden');
+
 })
 
 //CLOSE OTHERS TOOLTIP
-
-
-
-
 othersToolTip.addEventListener('click',function(e){
 e.preventDefault();
 othersToolTip.classList.add('hidden');
@@ -59,7 +56,7 @@ nbCloseButton.addEventListener('click',function(e){
     e.preventDefault();
     navbarContainer.style.width = "7%";
     mapContainer.style.width = "93%";
- //   navUL.style.paddingLeft = '3em';
+    navUL.style.paddingLeft = '3em';
     nbCloseButton.classList.add('hidden');
     for(let i = 0; i <= navBarText.length;i++){
       navBarText[i].classList.add('hidden');
@@ -71,21 +68,12 @@ navbarContainer.addEventListener('mouseover',function(e){
     navbarContainer.style.width = "18%";
     mapContainer.style.width = "82%";
     nbCloseButton.classList.remove('hidden');
- //   navUL.style.paddingLeft = '0';
+    navUL.style.paddingLeft = '0';
 
     for(let i = 0; i <= navBarText.length;i++){
       navBarText[i].classList.remove('hidden');
-      
-      navBarText[i].addEventListener('click',function(e){
-        e.preventDefault();
-        //othersToolTip.classList.remove('hidden');
-       // statsToolTip.classList.remove('hidden');
-        })
      }
-  
 })
-
-
 
 // Make the DIV element draggable:
 dragElement1(document.getElementById("statsToolTip"));
@@ -300,8 +288,6 @@ function resetInspector() {
 window.onload = function () {
   tutorial();
 };
-
-
 
 
 
