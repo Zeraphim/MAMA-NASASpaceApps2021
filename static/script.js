@@ -20,6 +20,9 @@ const nbCloseButton = document.querySelector('#nbCloseBtn');
 const navbarContainer = document.querySelector('.navbar-container');
 const mapContainer = document.querySelector('.map-container');
 
+//Navbar-text
+const navBarText = document.querySelectorAll('.navbar-text');
+
 
 
 //OPEN STATS TOOLTIP
@@ -54,6 +57,9 @@ nbCloseButton.addEventListener('click',function(e){
     navbarContainer.style.width = "7%";
     mapContainer.style.width = "93%";
     nbCloseButton.classList.add('hidden');
+    for(let i = 0; i <= navBarText.length;i++){
+      navBarText[i].classList.add('hidden');
+     }
 })
 
 navbarContainer.addEventListener('mouseover',function(e){
@@ -61,7 +67,9 @@ navbarContainer.addEventListener('mouseover',function(e){
     navbarContainer.style.width = "18%";
     mapContainer.style.width = "82%";
     nbCloseButton.classList.remove('hidden');
-    
+    for(let i = 0; i <= navBarText.length;i++){
+      navBarText[i].classList.remove('hidden');
+     }
 })
 
 // Make the DIV element draggable:

@@ -57,9 +57,14 @@ padding-left: 2em;
 nav ul li{
 list-style: none;
 padding-top: 2em;
-
+display: flex;
+justify-content: space-between;
 }
 
+span {
+    padding-left: 1em;
+   line-height: 2.2em;
+}
 nav ul li a{
 color: #D4F1F4;
 font-size: 1.5em;
