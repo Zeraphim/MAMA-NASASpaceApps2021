@@ -124,3 +124,207 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+
+// W3Schools draggable div
+// Make the DIV element draggable:
+dragElement(document.getElementById("draggable"));
+
+function dragElement(elmnt) {
+  var pos1 = 0,
+    pos2 = 0,
+    pos3 = 0,
+    pos4 = 0;
+  if (document.querySelector(".draggableheader")) {
+    // if present, the header is where you move the DIV from:
+    document.querySelector(".draggableheader").onmousedown = dragMouseDown;
+  } else {
+    console.log("no header");
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    var window_height = window.innerHeight;
+    var window_width = window.innerWidth;
+    console.log(window_width);
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+
+    if (parseInt(elmnt.style.top) < 0) {
+      elmnt.style.top = "0";
+    } else if (parseInt(elmnt.style.left) < 0) {
+      elmnt.style.left = "0";
+    } else if (parseInt(elmnt.style.top) > window_height - 50) {
+      elmnt.style.top = "70vh";
+      elmnt.style.left = "60vw";
+    } else if (parseInt(elmnt.style.left) > window_width - 150) {
+      elmnt.style.top = "70vh";
+      elmnt.style.left = "60vw";
+    } else {
+      elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+      elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+    }
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+function get_events(lat, lng) {
+  fetch("api/retrieve/events/?lat=" + lat + "&lng=" + lng)
+    .then((response) => response.json())
+    .then((json) => display_card(json));
+}
+
+function display_card(city_name) {
+  fetch("api/retrieve/events/city/?city_name=" + city_name)
+    .then((response) => response.json())
+    .then((events) => display_events(city_name, events));
+}
+
+function display_events(city_name, events) {
+  var event_entries = "";
+  var i;
+  for (i = 0; i < events.length; i++) {
+    if (events[i][4] === "General Warning") {
+      event_entries += `<div class="card mt-3 bg-warning text-light" style="width: 18rem;">`;
+    } else if (events[i][4] === "Risk Mitigation/Preparation") {
+      event_entries += `<div class="card mt-3 bg-success text-light" style="width: 18rem;">`;
+    } else if (events[i][4] === "Disaster") {
+      event_entries += `<div class="card mt-3 bg-danger text-light" style="width: 18rem;">`;
+    } else if (events[i][4] === "Response") {
+      event_entries += `<div class="card mt-3 bg-info text-light" style="width: 18rem;">`;
+    }
+
+    event_entries += `
+  <div class="card-body" style="text-align: left;">
+    <h5 class="card-title font-weight-bold">${events[i][2]}</h5>
+    <h6 class="card-subtitle mb-2 font-weight-light">${events[i][4]}</h6>
+    <p class="card-text font-weight-normal">${events[i][3]}</p>
+    <h6 class="text-light mb-2 font-italic">${events[i][5]}</h6>
+  </div></div>`;
+    console.log("looped");
+  }
+  let marker_card = document.querySelector(".content");
+
+  if (events.length === 0) {
+    marker_card.innerHTML =
+      "" +
+      "<div style='background-color: white;padding: 20px; max-width: 400px; max-height: 400px'><p>Events in " +
+      city_name +
+      "<br></p><a class='text-muted'>No entry exists for this city.</a></div>";
+    marker_card.style.visibility = "true";
+  } else {
+    marker_card.innerHTML =
+      "" +
+      "<div style='background-color: white;padding: 20px; max-width: 400px; max-height: 400px'><p>Events in " +
+      city_name +
+      "<br></p>" +
+      event_entries +
+      "</div>";
+    marker_card.style.visibility = "true";
+  }
+}
+
+function tutorial(page = 0) {
+  let inspector = document.querySelector(".content");
+  if (page === 0) {
+    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: left;">
+    <h5 class="card-title font-weight-bold">Welcome to MAMA!</h5>
+    <h6 class="card-subtitle mb-2 font-weight-light">Page 1 of 4</h6>
+    <p class="card-text font-weight-normal">MAMA</p>
+    <h6 class="text-muted mb-2 font-italic"></h6>
+    <button onclick="tutorial(${
+      page - 1
+    })" class="btn btn-primary disabled">Previous</button>
+    <button onclick="tutorial(${
+      page + 1
+    })" class="btn btn-primary" style="float: right">Next</button>
+  </div></div>`;
+  }
+
+  if (page === 1) {
+    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: left;">
+    <h5 class="card-title font-weight-bold">Create a new Event</h5>
+    <h6 class="card-subtitle mb-2 font-weight-light">Page 2 of 4</h6>
+    <p class="card-text font-weight-normal">After pressing the map, the Inspector will show you options to report a new
+    event and list all events in the city of your marker. The Inspector will then show a form that can be filled to
+    send your report.</p>
+    <h6 class="text-muted mb-2 font-italic"></h6>
+    <button onclick="tutorial(${
+      page - 1
+    })" class="btn btn-primary">Previous</button>
+    <button onclick="tutorial(${
+      page + 1
+    })" class="btn btn-primary" style="float: right">Next</button>
+  </div></div>`;
+  }
+
+  if (page === 2) {
+    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: left;">
+    <h5 class="card-title font-weight-bold">List all Events in the city.</h5>
+    <h6 class="card-subtitle mb-2 font-weight-light">Page 3 of 4</h6>
+    <p class="card-text font-weight-normal">By pressing an existing Event marker in the map, or by clicking "View all..."
+    in the Inspector, you can see a list of all events in the city of the selected area.</p>
+    <h6 class="text-muted mb-2 font-italic"></h6>
+    <button onclick="tutorial(${
+      page - 1
+    })" class="btn btn-primary">Previous</button>
+    <button onclick="tutorial(${
+      page + 1
+    })" class="btn btn-primary" style="float: right">Next</button>
+  </div></div>`;
+  }
+
+  if (page === 3) {
+    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: left;">
+    <h5 class="card-title font-weight-bold">Collaborative Information all in one place.</h5>
+    <h6 class="card-subtitle mb-2 font-weight-light">Page 4 of 4</h6>
+    <p class="card-text font-weight-normal">Articles from reliable sources and independent authors can be found in the
+    sidebar > Articles. Users can both read existing data and write their own posts.</p>
+    <h6 class="text-muted mb-2 font-italic"></h6>
+    <button onclick="tutorial(${
+      page - 1
+    })" class="btn btn-primary">Previous</button>
+    <button onclick="resetInspector()" class="btn btn-primary" style="float: right">Finish</button>
+  </div></div>`;
+  }
+}
+
+function resetInspector() {
+  var inspector = document.querySelector("#draggable");
+  inspector.classList.add('hidden');
+
+  if (all_overlays[selected_area_index - 1] != null) {
+    all_overlays[selected_area_index - 1].setMap(null);
+  }
+}
+window.onload = function () {
+  tutorial();
+};
+
+
+
+
+
