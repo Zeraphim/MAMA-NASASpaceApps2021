@@ -250,10 +250,13 @@ function display_events(city_name, events) {
 function tutorial(page = 0) {
   let inspector = document.querySelector(".content");
   if (page === 0) {
-    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: left;">
+    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: justify;">
     <h5 class="card-title font-weight-bold">Welcome to MAMA!</h5>
     <h6 class="card-subtitle mb-2 font-weight-light">Page 1 of 4</h6>
-    <p class="card-text font-weight-normal">MAMA</p>
+    <p class="card-text font-weight-normal">
+    <br>
+    Know about the marine debris floating in your waters!<br>
+    </p>
     <h6 class="text-muted mb-2 font-italic"></h6>
     <button onclick="tutorial(${
       page - 1
@@ -265,12 +268,21 @@ function tutorial(page = 0) {
   }
 
   if (page === 1) {
-    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: left;">
-    <h5 class="card-title font-weight-bold">Create a new Event</h5>
+    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: justify;">
+    <h5 class="card-title font-weight-bold">How to use</h5>
     <h6 class="card-subtitle mb-2 font-weight-light">Page 2 of 4</h6>
-    <p class="card-text font-weight-normal">After pressing the map, the Inspector will show you options to report a new
-    event and list all events in the city of your marker. The Inspector will then show a form that can be filled to
-    send your report.</p>
+    <p class="card-text font-weight-normal">
+    <br>
+    <b>Home</b><br>
+    View the Heat Map
+    <br><br>
+    <b>Statistics</b><br>
+    View information regarding the marine debris in your area<br>
+    <br>
+    <b>Donate</b><br>
+    Donate towards a cleaner ocean or be a volunteer!
+    <br>
+    </p>
     <h6 class="text-muted mb-2 font-italic"></h6>
     <button onclick="tutorial(${
       page - 1
@@ -282,11 +294,13 @@ function tutorial(page = 0) {
   }
 
   if (page === 2) {
-    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: left;">
-    <h5 class="card-title font-weight-bold">List all Events in the city.</h5>
+    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: justify;">
+    <h5 class="card-title font-weight-bold">How to use</h5>
     <h6 class="card-subtitle mb-2 font-weight-light">Page 3 of 4</h6>
-    <p class="card-text font-weight-normal">By pressing an existing Event marker in the map, or by clicking "View all..."
-    in the Inspector, you can see a list of all events in the city of the selected area.</p>
+    <p class="card-text font-weight-normal">
+    <br>
+    MAMA (Monitoring and Assessing Marine Debris Application) uses Mapbox API to display heatmaps in ocean bodies with high concentration of marine debris. The data is extracted from sattelite images which is then used by the application to provide heatmaps in their corresponding coordinates in the water bodies.
+    </p>
     <h6 class="text-muted mb-2 font-italic"></h6>
     <button onclick="tutorial(${
       page - 1
@@ -298,11 +312,16 @@ function tutorial(page = 0) {
   }
 
   if (page === 3) {
-    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: left;">
-    <h5 class="card-title font-weight-bold">Collaborative Information all in one place.</h5>
+    inspector.innerHTML = `<div class="card mt-3" style="width: 18rem;"><div class="card-body" style="text-align: justify;">
+    <h5 class="card-title font-weight-bold">Good to go!</h5>
     <h6 class="card-subtitle mb-2 font-weight-light">Page 4 of 4</h6>
-    <p class="card-text font-weight-normal">Articles from reliable sources and independent authors can be found in the
-    sidebar > Articles. Users can both read existing data and write their own posts.</p>
+    <p class="card-text font-weight-normal">
+    <br>
+    <b>"A Healthy Sea is Marine Debris Free."</b>
+    <br><br>
+    - Hydronautics Team
+    <br>
+    </p>
     <h6 class="text-muted mb-2 font-italic"></h6>
     <button onclick="tutorial(${
       page - 1
