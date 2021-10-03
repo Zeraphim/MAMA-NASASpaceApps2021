@@ -22,7 +22,7 @@ const mapContainer = document.querySelector('.map-container');
 
 //Navbar-text
 const navBarText = document.querySelectorAll('.navbar-text');
-
+const navUL = document.querySelector('.navUL');
 
 
 //OPEN STATS TOOLTIP
@@ -56,6 +56,7 @@ nbCloseButton.addEventListener('click',function(e){
     e.preventDefault();
     navbarContainer.style.width = "7%";
     mapContainer.style.width = "93%";
+    navUL.style.paddingLeft = '3em';
     nbCloseButton.classList.add('hidden');
     for(let i = 0; i <= navBarText.length;i++){
       navBarText[i].classList.add('hidden');
@@ -67,6 +68,7 @@ navbarContainer.addEventListener('mouseover',function(e){
     navbarContainer.style.width = "18%";
     mapContainer.style.width = "82%";
     nbCloseButton.classList.remove('hidden');
+    navUL.style.paddingLeft = '0';
     for(let i = 0; i <= navBarText.length;i++){
       navBarText[i].classList.remove('hidden');
      }
