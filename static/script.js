@@ -245,7 +245,7 @@ function tutorial(page = 0) {
     <h6 class="card-subtitle mb-2 font-weight-light">Page 3 of 4</h6>
     <p class="card-text font-weight-normal">
     <br>
-    MAMA (Monitoring and Assessing Marine Debris Application) uses Mapbox API to display heatmaps in ocean bodies with high concentration of marine debris. The data is extracted from sattelite images which is then used by the application to provide heatmaps in their corresponding coordinates in the water bodies.
+  MAMA (Monitoring and Assessing Marine Debris Application) uses Mapbox API to display heatmaps in ocean bodies with high concentration of marine debris. The data is extracted from satellite images which is then used by the application to provide heatmaps in their corresponding coordinates in bodies of water.
     </p>
     <h6 class="text-muted mb-2 font-italic"></h6>
     <button onclick="tutorial(${
